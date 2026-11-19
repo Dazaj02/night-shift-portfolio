@@ -17,6 +17,7 @@ import { DocState } from "@/components/layout/DocState";
 import { EntryGate } from "@/components/ui/EntryGate";
 import { MOTION_INIT_SCRIPT } from "@/lib/motion";
 import { GATE_INIT_SCRIPT } from "@/lib/gate";
+import { gateItems } from "@/lib/gateItems";
 import "../globals.css";
 
 const chakra = Chakra_Petch({
@@ -114,7 +115,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           motion={ui.motion}
           theme={ui.theme}
         />
-        <EntryGate labels={ui.gate} />
+        <EntryGate labels={ui.gate} items={gateItems(lang)} />
         {children}
         <SiteFooter lang={lang} />
       </body>
