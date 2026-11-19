@@ -5,17 +5,22 @@ import { sectionPosition } from "@/lib/nav";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PlaceholderBadge } from "@/components/ui/PlaceholderBadge";
+import { Icon } from "@/components/ui/Icon";
 
 function Caption({
   item,
   channel,
   lang,
   badge,
+  linkedinSoon,
+  external,
 }: {
   item: Testimonial;
   channel: string;
   lang: Locale;
   badge: string;
+  linkedinSoon: string;
+  external: string;
 }) {
   return (
     <figcaption className="mt-5 flex flex-wrap items-start gap-x-4 gap-y-2">
@@ -28,10 +33,31 @@ function Caption({
           {t(item.role, lang)} · {t(item.relation, lang)}
         </p>
         {item.context && <p className="text-sm text-ink-dim">{t(item.context, lang)}</p>}
+        {item.linkedin ? (
+          <a
+            href={item.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-flex min-h-11 items-center gap-2 text-sm text-ink underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+          >
+            <Icon name="linkedin" size={16} />
+            LinkedIn
+            <span className="sr-only"> {external}</span>
+          </a>
+        ) : item.linkedin === null ? (
+          <p className="mt-1 inline-flex items-center gap-2 text-sm text-ink-faint">
+            <Icon name="linkedin" size={16} />
+            LinkedIn · {linkedinSoon}
+          </p>
+        ) : null}
       </div>
       {item.isPlaceholder && <PlaceholderBadge label={badge} />}
     </figcaption>
   );
+}
+
+function Quote({ item, lang, empty }: { item: Testimonial; lang: Locale; empty: string }) {
+  return item.quote ? <p>{t(item.quote, lang)}</p> : <p className="text-ink-faint">{empty}</p>;
 }
 
 export function Testimonials({ lang }: { lang: Locale }) {
@@ -55,9 +81,9 @@ export function Testimonials({ lang }: { lang: Locale }) {
           <Reveal as="figure" className="glitch-hover lg:col-span-7 lg:self-center">
             <span aria-hidden="true" className="block h-0.5 w-14 bg-accent" />
             <blockquote className="glitch-hover-target mt-6 text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-snug text-ink">
-              <p>{t(featured.quote, lang)}</p>
+              <Quote item={featured} lang={lang} empty={ui.testimonials.empty} />
             </blockquote>
-            <Caption item={featured} channel={channelOf(1)} lang={lang} badge={ui.placeholderBadge} />
+            <Caption item={featured} channel={channelOf(1)} lang={lang} badge={ui.placeholderBadge} linkedinSoon={ui.comingSoon} external={ui.externalLink} />
           </Reveal>
         )}
 
@@ -65,9 +91,9 @@ export function Testimonials({ lang }: { lang: Locale }) {
           {rest.map((item, i) => (
             <Reveal as="figure" key={item.id} index={i + 1} className="glitch-hover py-7 first:pt-6 last:pb-6">
               <blockquote className="glitch-hover-target text-lg leading-relaxed text-ink">
-                <p>{t(item.quote, lang)}</p>
+                <Quote item={item} lang={lang} empty={ui.testimonials.empty} />
               </blockquote>
-              <Caption item={item} channel={channelOf(i + 2)} lang={lang} badge={ui.placeholderBadge} />
+              <Caption item={item} channel={channelOf(i + 2)} lang={lang} badge={ui.placeholderBadge} linkedinSoon={ui.comingSoon} external={ui.externalLink} />
             </Reveal>
           ))}
         </div>

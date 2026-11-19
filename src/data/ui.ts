@@ -72,7 +72,8 @@ export const ui: Record<Locale, UIStrings> = {
     testimonials: {
       title: "Testimonios",
       intro:
-        "Opiniones de docentes, compañeros y clientes. Los textos marcados como Ejemplo son de muestra.",
+        "Lo que opinan quienes han visto mi trabajo de cerca: un docente y dos ingenieros de software. Los textos marcados como Ejemplo son de muestra.",
+      empty: "Testimonio pendiente.",
     },
     stack: {
       title: "Tecnologías",
@@ -200,7 +201,8 @@ export const ui: Record<Locale, UIStrings> = {
     testimonials: {
       title: "Testimonials",
       intro:
-        "Feedback from teachers, peers and clients. Items marked Example are sample text.",
+        "What people who have seen my work up close say: a lecturer and two software engineers. Items marked Example are sample text.",
+      empty: "Testimonial pending.",
     },
     stack: {
       title: "Technologies",

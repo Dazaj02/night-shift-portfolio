@@ -873,7 +873,7 @@ export const portfolio: PortfolioData = {
   testimonials: [
     {
       id: "docente",
-      // PLACEHOLDER: nombre real con permiso de la persona
+      // PLACEHOLDER: nombre real y cita con permiso de la persona
       name: "[Nombre del docente]",
       role: {
         es: "Docente de Diseño de Interfaces, Universidad Cooperativa de Colombia",
@@ -890,39 +890,36 @@ export const portfolio: PortfolioData = {
       isPlaceholder: true,
     },
     {
-      id: "companero",
-      // PLACEHOLDER: nombre real con permiso de la persona
-      name: "[Nombre de compañero/a]",
+      id: "primo",
+      // PENDIENTE: nombre y testimonio de mi primo (sin cita por ahora)
+      name: "[Nombre de mi primo]",
       role: {
-        es: "Compañero/a de curso",
-        en: "Classmate",
+        es: "Ingeniero de software full stack",
+        en: "Full stack software engineer",
       },
       relation: {
-        es: "Trabajo en equipo",
-        en: "Team project",
-      },
-      quote: {
-        es: "Ejemplo: Explica sus decisiones técnicas con claridad, incluso cuando el equipo no está de acuerdo, y siempre entrega a tiempo.",
-        en: "Example: Explains his technical decisions clearly, even when the team disagrees, and always delivers on time.",
+        es: "Familiar",
+        en: "Family",
       },
       isPlaceholder: true,
     },
     {
-      id: "cliente",
-      // PLACEHOLDER: nombre real con permiso de la persona
-      name: "[Nombre del cliente]",
+      id: "ingeniero-pueblo",
+      // PLACEHOLDER: nombre y cita reales; LinkedIn pendiente de recibirlo
+      name: "[Nombre del ingeniero]",
       role: {
-        es: "Cliente de proyecto freelance",
-        en: "Freelance client",
+        es: "Ingeniero",
+        en: "Engineer",
       },
       relation: {
-        es: "Proyecto de backend",
-        en: "Backend project",
+        es: "De mi pueblo",
+        en: "From my hometown",
       },
       quote: {
-        es: "Ejemplo: Entendió mis necesidades desde el primer mensaje y entregó una API que mi aplicación consume sin cambios.",
-        en: "Example: Understood my needs from the first message and delivered an API that my app consumes without changes.",
+        es: "Ejemplo: Se nota que David se toma el tiempo de entender el problema antes de escribir código; eso se ve en cómo explica sus proyectos.",
+        en: "Example: You can tell David takes the time to understand the problem before writing code; it shows in how he explains his projects.",
       },
+      linkedin: null,
       isPlaceholder: true,
     },
   ],
@@ -1115,10 +1112,9 @@ export const portfolio: PortfolioData = {
     {
       kind: "linkedin",
       label: "LinkedIn",
-      // PLACEHOLDER: perfil real; href null hasta tener la URL
-      href: null,
-      display: "linkedin.com/in/[tu-usuario]",
-      isPlaceholder: true,
+      href: "https://www.linkedin.com/in/david-alejandro-aza-jojoa-449044408",
+      display: "linkedin.com/in/david-alejandro-aza-jojoa-449044408",
+      isPlaceholder: false,
     },
     {
       kind: "email",

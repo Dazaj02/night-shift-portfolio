@@ -121,7 +121,10 @@ export interface Testimonial {
   role: Localized;
   relation: Localized;
   context?: Localized;
-  quote: Localized;
+  /** Sin `quote` = testimonio pendiente (se muestra una casilla vacía). */
+  quote?: Localized;
+  /** URL de LinkedIn de la persona; null = pendiente de recibirla (se muestra "Próximamente"). */
+  linkedin?: string | null;
   /** true = ejemplo; debe mostrarse con una etiqueta visible "Ejemplo". */
   isPlaceholder: boolean;
 }
@@ -243,7 +246,7 @@ export interface UIStrings {
   };
   placeholderBadge: string;
   placeholderNote: string;
-  testimonials: { title: string; intro: string };
+  testimonials: { title: string; intro: string; empty: string };
   stack: { title: string; intro: string; usedIn: string; noProject: string };
   gallery: {
     dialogLabel: string;
