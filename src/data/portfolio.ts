@@ -1072,10 +1072,10 @@ export const portfolio: PortfolioData = {
     {
       src: "/images/about/about-01.jpg",
       alt: {
-        es: "Sugerencia: foto tuya jugando o con tu consola o PC",
-        en: "Suggestion: photo of you playing, with your console or PC",
+        es: "Sugerencia: captura o foto de tu partida de Terraria",
+        en: "Suggestion: screenshot or photo of your Terraria game",
       },
-      caption: { es: "Videojuegos", en: "Video games" },
+      caption: { es: "Videojuegos · Terraria sobre todo", en: "Video games · mainly Terraria" },
       width: 1200,
       height: 900,
       isPlaceholder: true,
@@ -1097,7 +1097,7 @@ export const portfolio: PortfolioData = {
         es: "Sugerencia: foto de un viaje",
         en: "Suggestion: photo from a trip",
       },
-      caption: { es: "Viajes", en: "Travel" },
+      caption: { es: "Viajes · conocer lugares nuevos", en: "Travel · discovering new places" },
       width: 1200,
       height: 900,
       isPlaceholder: true,
