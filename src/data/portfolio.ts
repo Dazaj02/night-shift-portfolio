@@ -45,12 +45,16 @@ export const portfolio: PortfolioData = {
         "Desarrollo nativo para Android",
         "Documentación técnica con UML2 y PlantUML",
         "Interfaces claras que se entienden en el primer vistazo",
+        "Videojuegos, sobre todo Terraria",
+        "Viajar y conocer lugares nuevos",
       ],
       en: [
         "REST API architecture and data modeling",
         "Native Android development",
         "Technical documentation with UML2 and PlantUML",
         "Clear interfaces that make sense at first glance",
+        "Video games, mainly Terraria",
+        "Travelling and discovering new places",
       ],
     },
     approach: {
