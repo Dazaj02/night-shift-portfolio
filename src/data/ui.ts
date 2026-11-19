@@ -89,6 +89,13 @@ export const ui: Record<Locale, UIStrings> = {
       counter: "{n} de {total}",
     },
     photoPlaceholder: "Foto pendiente",
+    gate: {
+      label: "Pantalla de entrada",
+      session: "SESIÓN",
+      hold: "Mantén pulsado para entrar",
+      hint: "Toca y mantén la pantalla, o mantén Espacio.",
+      skip: "Saltar intro",
+    },
     motion: {
       pause: "Pausar efectos",
       play: "Activar efectos",
@@ -218,6 +225,13 @@ export const ui: Record<Locale, UIStrings> = {
       counter: "{n} of {total}",
     },
     photoPlaceholder: "Photo pending",
+    gate: {
+      label: "Entry screen",
+      session: "SESSION",
+      hold: "Hold to enter",
+      hint: "Press and hold the screen, or hold Space.",
+      skip: "Skip intro",
+    },
     motion: {
       pause: "Pause effects",
       play: "Enable effects",

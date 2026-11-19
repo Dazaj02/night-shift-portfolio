@@ -1117,3 +1117,118 @@ html[data-modal] main > :nth-child(3n) { --s: 0.6; }
   84% { filter: drop-shadow(calc(2px * var(--amp)) 0 0 rgb(0 240 255 / 0.4)) drop-shadow(calc(-2px * var(--amp)) 0 0 rgb(255 51 85 / 0.4)); }
   87%, 100% { filter: none; }
 }
+
+/* Pantalla de entrada (nube de puntos 3D + mantener pulsado) */
+.gate {
+  display: none;
+}
+html[data-gate] .gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: block;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, #14141a 0%, #0a0a0c 62%, #050507 100%);
+  color: #b9b9c2;
+  font-family: var(--font-mono);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+html[data-gate] body {
+  overflow: hidden;
+}
+html[data-gate] body > :not(.gate):not(script):not(next-route-announcer) {
+  visibility: hidden;
+}
+.gate-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.gate-corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #8a8a94;
+}
+.gate-meta {
+  position: absolute;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: #7c7c86;
+}
+.gate-center {
+  position: absolute;
+  inset-inline: 0;
+  bottom: clamp(3.5rem, 12vh, 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+.gate-hold {
+  min-height: 3rem;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 0;
+  color: #e8e8ea;
+  font: inherit;
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.gate-hold:focus-visible,
+.gate-skip:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.gate-track {
+  display: block;
+  width: min(16rem, 60vw);
+  height: 2px;
+  background: #2a2a32;
+}
+.gate-bar {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.gate-pct {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #8a8a94;
+}
+.gate-hint {
+  font-size: 0.75rem;
+  color: #6c6c76;
+}
+.gate-skip {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.25rem;
+  min-height: 2.75rem;
+  padding: 0 0.5rem;
+  background: transparent;
+  border: 0;
+  color: #8a8a94;
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.gate-skip:hover {
+  color: #e8e8ea;
+}
+.gate-hold,
+.gate-pct,
+.gate-hint {
+  text-shadow: 0 0 10px #0a0a0c, 0 0 3px #0a0a0c, 0 0 3px #0a0a0c;
+}
