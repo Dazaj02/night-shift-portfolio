@@ -33,28 +33,28 @@
 
 :root {
   --header-h: 3.5rem;
-  --bg-dark: #0a0a0c;
-  --bg-light: #f2efe6;
+  --bg-dark: #04090d;
+  --bg-light: #e4f1f4;
 }
 
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
   --c-void: var(--bg-dark);
-  --c-panel: #141418;
-  --c-line: #2a2a31;
-  --c-ink: #e8e6e3;
-  --c-ink-dim: #a8a49a;
-  --c-ink-faint: #8c887f;
-  --c-volt: #fcee0a;
-  --c-volt-ink: #0a0a0c;
-  --c-accent: #fcee0a;
-  --c-cyan: #00f0ff;
+  --c-panel: #0a161d;
+  --c-line: #17323d;
+  --c-ink: #e6f6f9;
+  --c-ink-dim: #8fb4bd;
+  --c-ink-faint: #7a9ea8;
+  --c-volt: #00f0ff;
+  --c-volt-ink: #04090d;
+  --c-accent: #00f0ff;
+  --c-cyan: #7fe3ee;
   --c-alert: #ff3355;
-  --hover-fill: #e8e6e3;
-  --hover-ink: #0a0a0c;
+  --hover-fill: #e6f6f9;
+  --hover-ink: #04090d;
   --shadow-img: 0 10px 28px rgb(0 0 0 / 0.55);
-  --backdrop: rgb(10 10 12 / 0.92);
+  --backdrop: rgb(4 9 13 / 0.92);
   --scan-a: 3%;
   --noise-o: 0.05;
   --grid-a: 20%;
@@ -62,8 +62,8 @@
   --strip-h: 6px;
   --strip-a: var(--c-accent);
   --strip-b: var(--c-void);
-  --c-edge: #2a2a31;
-  --c-screen: #141418;
+  --c-edge: #17323d;
+  --c-screen: #0a161d;
   --nav-active-bg: transparent;
   --nav-active-ink: var(--c-ink);
   --panel-drop: none;
@@ -77,36 +77,36 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --c-void: var(--bg-light);
-  --c-panel: #e8e4d8;
-  --c-line: #cfc9b8;
-  --c-ink: #14141a;
-  --c-ink-dim: #4a463c;
-  --c-ink-faint: #5c574a;
-  --c-volt: #fcee0a;
-  --c-volt-ink: #14141a;
-  --c-accent: #6e6200;
+  --c-panel: #d3e6ea;
+  --c-line: #aecbd2;
+  --c-ink: #04141b;
+  --c-ink-dim: #2f4f5a;
+  --c-ink-faint: #416672;
+  --c-volt: #00f0ff;
+  --c-volt-ink: #04141b;
+  --c-accent: #005f6b;
   --c-cyan: #00707a;
   --c-alert: #c2003a;
-  --hover-fill: #14141a;
-  --hover-ink: #f2efe6;
-  --shadow-img: 0 10px 28px rgb(20 20 26 / 0.2);
-  --backdrop: rgb(242 239 230 / 0.94);
+  --hover-fill: #04141b;
+  --hover-ink: #e4f1f4;
+  --shadow-img: 0 10px 28px rgb(4 20 27 / 0.2);
+  --backdrop: rgb(228 241 244 / 0.94);
   --scan-a: 1.6%;
   --noise-o: 0.025;
   --grid-a: 34%;
   --strip-o: 1;
   --strip-h: 14px;
-  --strip-a: #fcee0a;
-  --strip-b: #14141a;
-  --c-edge: #14141a;
-  --c-screen: #0a0a0c;
-  --nav-active-bg: #fcee0a;
-  --nav-active-ink: #14141a;
-  --panel-drop: drop-shadow(6px 6px 0 rgb(20 20 26 / 0.9));
-  --btn-drop: drop-shadow(3px 3px 0 #14141a);
-  --dots: radial-gradient(color-mix(in srgb, #14141a 16%, transparent) 1px, transparent 1.3px);
-  --grid-c: #14141a;
-  --hud: #14141a;
+  --strip-a: #00f0ff;
+  --strip-b: #04141b;
+  --c-edge: #04141b;
+  --c-screen: #04090d;
+  --nav-active-bg: #00f0ff;
+  --nav-active-ink: #04141b;
+  --panel-drop: drop-shadow(6px 6px 0 rgb(4 20 27 / 0.9));
+  --btn-drop: drop-shadow(3px 3px 0 #04141b);
+  --dots: radial-gradient(color-mix(in srgb, #04141b 16%, transparent) 1px, transparent 1.3px);
+  --grid-c: #04141b;
+  --hud: #04141b;
   --screen-pad: 1.25rem;
 }
 
@@ -114,18 +114,18 @@
    Redefine los tokens localmente, así todo lo que contiene mantiene contraste AA. */
 :root[data-theme="light"] .screen,
 :root[data-theme="light"] .screen-flat {
-  --c-void: #0a0a0c;
-  --c-panel: #141418;
-  --c-line: #2a2a31;
-  --c-edge: #2a2a31;
-  --c-ink: #e8e6e3;
-  --c-ink-dim: #a8a49a;
-  --c-ink-faint: #8c887f;
-  --c-accent: #fcee0a;
-  --c-cyan: #00f0ff;
+  --c-void: #04090d;
+  --c-panel: #0a161d;
+  --c-line: #17323d;
+  --c-edge: #17323d;
+  --c-ink: #e6f6f9;
+  --c-ink-dim: #8fb4bd;
+  --c-ink-faint: #7a9ea8;
+  --c-accent: #00f0ff;
+  --c-cyan: #7fe3ee;
   --c-alert: #ff3355;
-  --hover-fill: #e8e6e3;
-  --hover-ink: #0a0a0c;
+  --hover-fill: #e6f6f9;
+  --hover-ink: #04090d;
   --grid-a: 20%;
   --scan-a: 3%;
   color: var(--c-ink);
@@ -150,8 +150,8 @@
 }
 :root[data-theme="light"] .screen {
   background: var(--c-void);
-  border: 1px solid #14141a;
-  box-shadow: 6px 6px 0 #14141a;
+  border: 1px solid #04141b;
+  box-shadow: 6px 6px 0 #04141b;
 }
 
 /* ==========================================================================
@@ -754,9 +754,9 @@ html:not([data-motion="off"]) .pulse-dot {
   width: 120px;
   height: 8px;
   bottom: -2px;
-  background: #fcee0a;
+  background: #00f0ff;
   clip-path: none;
-  box-shadow: 0 0 0 2px #14141a;
+  box-shadow: 0 0 0 2px #04141b;
 }
 .sec-head {
   border-bottom-color: var(--color-edge);
@@ -926,7 +926,7 @@ html:not([data-motion="off"]) .reveal[data-rv="in"] {
   box-shadow:
     0 -6px 0 var(--color-cyan),
     0 6px 0 var(--color-alert),
-    0 0 0 1px #14141a;
+    0 0 0 1px #04141b;
   translate: 0 -10px;
   animation: fx-scan 380ms linear 480ms forwards;
 }

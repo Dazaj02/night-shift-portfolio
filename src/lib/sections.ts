@@ -38,7 +38,7 @@ export function goToSection(id: SectionId): boolean {
   navTarget = id;
   navUntil = performance.now() + 2500;
   const started = startGlitch("nav", {
-    fromColor: getComputedStyle(document.documentElement).getPropertyValue("--c-void").trim() || "#0a0a0c",
+    fromColor: getComputedStyle(document.documentElement).getPropertyValue("--c-void").trim() || "#04090d",
     onPeak: jump,
   });
   if (!started) jump();

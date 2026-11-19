@@ -33,7 +33,7 @@ function apply(theme: Theme) {
 /** Color de fondo del tema destino (las bandas del glitch se pintan con él). */
 function voidOf(theme: Theme): string {
   const v = getComputedStyle(document.documentElement).getPropertyValue(theme === "light" ? "--bg-light" : "--bg-dark");
-  return v.trim() || (theme === "light" ? "#f2efe6" : "#0a0a0c");
+  return v.trim() || (theme === "light" ? "#e4f1f4" : "#04090d");
 }
 
 /**

@@ -24,17 +24,17 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0A0A0C",
-          color: "#E8E6E3",
+          background: "#04090d",
+          color: "#e6f6f9",
           padding: 72,
           position: "relative",
         }}
       >
-        <div style={{ display: "flex", position: "absolute", right: 0, top: 0, width: 360, height: 630, background: "#141418" }} />
-        <div style={{ display: "flex", position: "absolute", right: 72, top: 72, width: 140, height: 14, background: "#FCEE0A" }} />
-        <div style={{ display: "flex", position: "absolute", right: 72, top: 104, width: 90, height: 14, background: "#2A2A31" }} />
+        <div style={{ display: "flex", position: "absolute", right: 0, top: 0, width: 360, height: 630, background: "#0a161d" }} />
+        <div style={{ display: "flex", position: "absolute", right: 72, top: 72, width: 140, height: 14, background: "#00f0ff" }} />
+        <div style={{ display: "flex", position: "absolute", right: 72, top: 104, width: 90, height: 14, background: "#17323d" }} />
         <div style={{ display: "flex", position: "absolute", right: 72, top: 136, width: 190, height: 14, background: "#00F0FF" }} />
-        <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, color: "#A8A49A" }}>D.AZA</div>
+        <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, color: "#8fb4bd" }}>D.AZA</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
@@ -53,7 +53,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
             {t(role, lang)}
           </div>
         </div>
-        <div style={{ display: "flex", height: 10, width: 220, background: "#FCEE0A" }} />
+        <div style={{ display: "flex", height: 10, width: 220, background: "#00f0ff" }} />
       </div>
     ),
     { ...size },
