@@ -278,8 +278,33 @@ export function EntryGate({ labels, items }: EntryGateProps) {
       pointer.tx = (e.clientX / window.innerWidth) * 2 - 1;
       pointer.ty = (e.clientY / window.innerHeight) * 2 - 1;
     };
+    // Teclado global: ↑/↓/Home/End eligen sección y Enter accede, sin importar dónde esté el foco.
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") finish(null);
+      if (e.key === "Escape") return finish(null);
+      if (accessRef.current !== null || doneRef.current || e.metaKey || e.ctrlKey || e.altKey) return;
+      const n = items.length;
+      const cur = selRef.current;
+      let next: number | null = null;
+      if (e.key === "ArrowDown") next = (cur + 1) % n;
+      else if (e.key === "ArrowUp") next = (cur - 1 + n) % n;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = n - 1;
+      if (next !== null) {
+        e.preventDefault();
+        selRef.current = next;
+        setSelected(next);
+        setEngaged(true);
+        const active = document.activeElement;
+        if (active && listRef.current.includes(active as HTMLButtonElement)) listRef.current[next]?.focus();
+        return;
+      }
+      // Enter con el foco fuera de un botón: accede a la sección elegida (en un botón lo gestiona su clic).
+      if (e.key === "Enter" && !(document.activeElement instanceof HTMLButtonElement)) {
+        e.preventDefault();
+        accessRef.current = cur;
+        setSelected(cur);
+        setAccessing(true);
+      }
     };
     window.addEventListener("pointermove", onMove);
     window.addEventListener("keydown", onKey);
@@ -314,19 +339,6 @@ export function EntryGate({ labels, items }: EntryGateProps) {
     : engaged
       ? `${labels.selected} ${current?.label}.`
       : labels.greeting;
-
-  function onListKey(e: React.KeyboardEvent) {
-    const n = items.length;
-    let next: number | null = null;
-    if (e.key === "ArrowDown") next = (selected + 1) % n;
-    else if (e.key === "ArrowUp") next = (selected - 1 + n) % n;
-    else if (e.key === "Home") next = 0;
-    else if (e.key === "End") next = n - 1;
-    if (next === null) return;
-    e.preventDefault();
-    select(next);
-    listRef.current[next]?.focus();
-  }
 
   return (
     <div
@@ -382,7 +394,7 @@ export function EntryGate({ labels, items }: EntryGateProps) {
           </p>
         </header>
 
-        <nav aria-label={labels.sections} className="gate-list" onKeyDown={onListKey}>
+        <nav aria-label={labels.sections} className="gate-list">
           <ul>
             {items.map((item, i) => (
               <li key={item.id}>
