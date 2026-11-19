@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { GATE_KEY } from "@/lib/gate";
+import { GATE_EVENT, GATE_KEY } from "@/lib/gate";
 import { startGlitch } from "@/lib/fx";
 import { getMotion } from "@/lib/motion";
 
@@ -44,6 +44,8 @@ void main() {
  */
 export function EntryGate({ labels }: EntryGateProps) {
   const [gone, setGone] = useState(false);
+  // Cada vez que se vuelve a abrir (logo D.AZA) se reinicia la escena.
+  const [run, setRun] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pctRef = useRef<HTMLSpanElement>(null);
@@ -216,6 +218,16 @@ export function EntryGate({ labels }: EntryGateProps) {
       window.removeEventListener("blur", release);
       window.removeEventListener("keydown", onKey);
     };
+  }, [run]);
+
+  useEffect(() => {
+    const reopen = () => {
+      document.documentElement.setAttribute("data-gate", "1");
+      setGone(false);
+      setRun((n) => n + 1);
+    };
+    window.addEventListener(GATE_EVENT, reopen);
+    return () => window.removeEventListener(GATE_EVENT, reopen);
   }, []);
 
   if (gone) return null;

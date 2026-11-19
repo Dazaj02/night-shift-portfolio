@@ -1,6 +1,12 @@
 /** Clave de sessionStorage: la pantalla de entrada se muestra una vez por sesión del navegador. */
 export const GATE_KEY = "gate-seen";
 
+/** Evento para volver a mostrar la pantalla de entrada (p. ej. al pulsar el logo D.AZA). */
+export const GATE_EVENT = "gate:open";
+export function openGate() {
+  window.dispatchEvent(new Event(GATE_EVENT));
+}
+
 /**
  * Script inline (se ejecuta después de MOTION_INIT_SCRIPT): marca <html data-gate="1"> antes del
  * primer pintado cuando toca mostrar la pantalla de entrada. Así el contenido nunca se ve un

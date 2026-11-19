@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Locale, SectionId } from "@/types/portfolio";
 import { SectionLink } from "@/components/ui/SectionLink";
+import { openGate } from "@/lib/gate";
 import { Icon } from "@/components/ui/Icon";
 import { cutButtonClass } from "@/components/ui/CutButton";
 import { MotionToggle } from "@/components/ui/MotionToggle";
@@ -111,10 +112,16 @@ export function SiteHeader({
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-14 border-b border-line bg-void">
       <div className="wrap flex h-full items-stretch justify-between gap-4">
-        <SectionLink
-          sectionId="inicio"
+        <a
+          href="#inicio"
           className="flex items-center font-display text-lg font-bold tracking-[0.12em] text-ink"
-          onClick={() => open && close(false)}
+          onClick={(e) => {
+            // El logo vuelve a la pantalla de entrada (la nube de puntos).
+            e.preventDefault();
+            if (open) close(false);
+            window.scrollTo(0, 0);
+            openGate();
+          }}
         >
           {handle.split(".").map((part, i) => (
             <span key={i}>
@@ -122,7 +129,7 @@ export function SiteHeader({
               {part}
             </span>
           ))}
-        </SectionLink>
+        </a>
 
         <nav aria-label={navLabel} className="hidden items-stretch xl:flex">
           <ul className="flex items-stretch">
