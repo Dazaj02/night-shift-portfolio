@@ -636,50 +636,11 @@ html:not([data-motion="off"]) .glitch-hover:focus-within .glitch-img__layer--b {
   20% { opacity: 0.9; clip-path: inset(64% 0 8% 0); transform: translateX(calc(5px * var(--amp))); }
 }
 
-/* Arsenal: ticker */
-.marquee {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-}
-.marquee-group {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-}
-html:not([data-motion="off"]) .marquee-track {
-  animation: marquee 50s linear infinite;
-}
-html[data-motion="soft"] .marquee-track {
-  animation-duration: 100s;
-}
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-@keyframes marquee {
-  to { transform: translateX(-50%); }
-}
-html[data-motion="off"] .marquee-track {
-  width: auto;
-}
-html[data-motion="off"] .marquee-group {
-  flex-shrink: 1;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-}
-html[data-motion="off"] .marquee-group[aria-hidden="true"] {
-  display: none;
-}
-
 /* Tecnologías: tabla de casillas + panel con glitch */
 .tech-cell {
   width: 100%;
-  min-height: 3.5rem;
-  padding: 0.5rem 0.75rem;
+  min-height: 4.25rem;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -698,13 +659,16 @@ html[data-motion="off"] .marquee-group[aria-hidden="true"] {
   border-color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 8%, transparent);
 }
-.tech-name {
+.tech-icon {
+  width: 2rem;
+  height: 2rem;
+}
+.tech-mono {
   font-family: var(--font-display);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  line-height: 1.15;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 2rem;
 }
 .tech-tip {
   position: fixed;
@@ -718,7 +682,7 @@ html[data-motion="off"] .marquee-group[aria-hidden="true"] {
 html:not([data-motion="off"]) .tech-tip {
   animation: ctx-glitch-in 280ms steps(1, end) 1;
 }
-html:not([data-motion="off"]) .tech-cell[data-active] .tech-name {
+html:not([data-motion="off"]) .tech-cell[data-active] :is(.tech-icon, .tech-mono) {
   animation: tech-name-glitch 300ms steps(1, end) 1;
 }
 @keyframes tech-name-glitch {

@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/i18n";
 import { Hero } from "@/components/sections/Hero";
-import { Arsenal } from "@/components/sections/Arsenal";
 import { TechStack } from "@/components/sections/TechStack";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
@@ -16,7 +15,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   return (
     <main id="main" tabIndex={-1} className="outline-none">
       <Hero lang={lang} />
-      <Arsenal lang={lang} />
       <About lang={lang} />
       <Projects lang={lang} />
       <div aria-hidden="true" className="warning-strip" />

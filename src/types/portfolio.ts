@@ -140,12 +140,6 @@ export interface ExperienceItem {
   isPlaceholder: boolean;
 }
 
-export interface SkillGroup {
-  id: string;
-  label: Localized;
-  items: string[];
-}
-
 export type SocialKind = "github" | "linkedin" | "email" | "phone" | "other";
 
 export interface SocialLink {
@@ -183,7 +177,6 @@ export interface Profile {
 export interface PortfolioData {
   profile: Profile;
   nav: NavItem[];
-  skills: SkillGroup[];
   projects: Project[];
   testimonials: Testimonial[];
   experience: ExperienceItem[];
@@ -219,7 +212,6 @@ export interface UIStrings {
   about: {
     title: string;
     galleryTitle: string;
-    skillsTitle: string;
     interestsTitle: string;
     approachTitle: string;
   };
@@ -252,7 +244,6 @@ export interface UIStrings {
   placeholderBadge: string;
   placeholderNote: string;
   testimonials: { title: string; intro: string };
-  toolbox: { title: string; intro: string };
   stack: { title: string; intro: string; usedIn: string; noProject: string };
   gallery: {
     dialogLabel: string;

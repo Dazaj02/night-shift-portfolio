@@ -31,7 +31,6 @@ export const ui: Record<Locale, UIStrings> = {
     about: {
       title: "Sobre mí",
       galleryTitle: "Fuera del código",
-      skillsTitle: "Stack y habilidades",
       interestsTitle: "Intereses",
       approachTitle: "Cómo trabajo",
     },
@@ -75,13 +74,9 @@ export const ui: Record<Locale, UIStrings> = {
       intro:
         "Opiniones de docentes, compañeros y clientes. Los textos marcados como Ejemplo son de muestra.",
     },
-    toolbox: {
-      title: "Arsenal",
-      intro: "Herramientas y tecnologías con las que construyo.",
-    },
     stack: {
       title: "Tecnologías",
-      intro: "Todo lo que he usado en mis proyectos, en una sola tabla. Pasa el cursor (o toca) una casilla para ver qué es y dónde la apliqué.",
+      intro: "Mi arsenal completo: todo lo que he usado en mis proyectos, en una sola tabla. Pasa el cursor (o toca) un ícono para ver su nombre, qué es y dónde lo apliqué.",
       usedIn: "Usado en",
       noProject: "Cursos y práctica",
     },
@@ -164,7 +159,6 @@ export const ui: Record<Locale, UIStrings> = {
     about: {
       title: "About me",
       galleryTitle: "Off the code",
-      skillsTitle: "Stack and skills",
       interestsTitle: "Interests",
       approachTitle: "How I work",
     },
@@ -208,13 +202,9 @@ export const ui: Record<Locale, UIStrings> = {
       intro:
         "Feedback from teachers, peers and clients. Items marked Example are sample text.",
     },
-    toolbox: {
-      title: "Loadout",
-      intro: "Tools and technologies I build with.",
-    },
     stack: {
       title: "Technologies",
-      intro: "Everything I have used across my projects, in one table. Hover (or tap) a cell to see what it is and where I applied it.",
+      intro: "My full arsenal: everything I have used across my projects, in one table. Hover (or tap) an icon to see its name, what it is and where I applied it.",
       usedIn: "Used in",
       noProject: "Courses and practice",
     },

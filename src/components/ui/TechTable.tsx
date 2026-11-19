@@ -1,11 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import type { TechIcon } from "@/data/techIcons";
 
 export interface TechCell {
   id: string;
   name: string;
   desc: string;
+  icon?: TechIcon;
   /** Proyectos donde se usó (ya traducidos); vacío = sin proyecto asociado. */
   usedIn: string[];
 }
@@ -24,6 +26,22 @@ interface TechTableProps {
 interface Active {
   cell: TechCell;
   rect: DOMRect;
+}
+
+function TechGlyph({ cell }: { cell: TechCell }) {
+  const icon = cell.icon;
+  if (icon && "path" in icon) {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="tech-icon" fill="currentColor">
+        <path d={icon.path} />
+      </svg>
+    );
+  }
+  return (
+    <span aria-hidden="true" className="tech-mono">
+      {icon && "text" in icon ? icon.text : cell.name.slice(0, 2)}
+    </span>
+  );
 }
 
 /**
@@ -86,11 +104,12 @@ export function TechTable({ rows, labels }: TechTableProps) {
               {row.cells.map((c) => {
                 const on = active?.cell.id === c.id;
                 return (
-                  <li key={c.id} className="-ml-px -mt-px flex basis-[8.25rem] grow">
+                  <li key={c.id} className="-ml-px -mt-px flex basis-[5rem] grow">
                     <button
                       type="button"
                       className="tech-cell"
                       data-active={on || undefined}
+                      aria-label={c.name}
                       aria-describedby={on ? tipId : undefined}
                       onPointerEnter={(e) => e.pointerType === "mouse" && show(c, e.currentTarget)}
                       onPointerLeave={(e) => e.pointerType === "mouse" && hide()}
@@ -98,7 +117,7 @@ export function TechTable({ rows, labels }: TechTableProps) {
                       onBlur={hide}
                       onClick={(e) => (on ? hide() : show(c, e.currentTarget))}
                     >
-                      <span className="tech-name">{c.name}</span>
+                      <TechGlyph cell={c} />
                     </button>
                   </li>
                 );

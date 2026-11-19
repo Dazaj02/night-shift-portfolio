@@ -6,7 +6,7 @@ import { GlitchHeading } from "./GlitchHeading";
 interface SectionProps {
   id: string;
   title: string;
-  /** Posición en la navegación; si falta (p. ej. Arsenal) no se muestra índice. */
+  /** Posición en la navegación; si falta no se muestra índice. */
   index?: number;
   total?: number;
   lang: Locale;

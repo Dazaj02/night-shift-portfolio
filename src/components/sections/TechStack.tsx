@@ -4,6 +4,7 @@ import { getUI, t } from "@/lib/i18n";
 import { sectionPosition } from "@/lib/nav";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { techIcons } from "@/data/techIcons";
 import { TechTable, type TechRow } from "@/components/ui/TechTable";
 
 export function TechStack({ lang }: { lang: Locale }) {
@@ -19,6 +20,7 @@ export function TechStack({ lang }: { lang: Locale }) {
         id: item.id,
         name: item.name,
         desc: t(item.desc, lang),
+        icon: techIcons[item.id],
         usedIn: portfolio.projects
           .filter((p) => p.tech.some((x) => names.includes(x)))
           .map((p) => t(p.title, lang)),

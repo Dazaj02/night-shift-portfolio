@@ -170,36 +170,6 @@ export const portfolio: PortfolioData = {
     },
   ],
 
-  skills: [
-    {
-      id: "frontend",
-      label: { es: "Frontend", en: "Frontend" },
-      items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Vite", "React Query"],
-    },
-    {
-      id: "backend",
-      label: { es: "Backend y datos", en: "Backend & data" },
-      items: ["Java", "Spring Boot", "Node.js", "Hono", "REST APIs", "MongoDB", "Supabase", "PostgreSQL", "SQLite"],
-    },
-    {
-      id: "mobile",
-      label: { es: "Móvil, reloj y escritorio", en: "Mobile, watch & desktop" },
-      items: ["Android", "Kotlin", "Jetpack Compose", "Wear OS", "React Native", "Expo", "JavaFX", "Godot"],
-    },
-    {
-      id: "arquitectura",
-      label: { es: "Arquitectura y herramientas", en: "Architecture & tools" },
-      items: [
-        "UML2",
-        "PlantUML",
-        "API Design",
-        "Git",
-        "GitHub Actions",
-        "Docker", // verificar
-      ],
-    },
-  ],
-
   projects: [
     {
       id: "focusread",
@@ -1102,10 +1072,10 @@ export const portfolio: PortfolioData = {
     {
       src: "/images/about/about-01.jpg",
       alt: {
-        es: "Sugerencia: foto de tu espacio de trabajo",
-        en: "Suggestion: photo of your workspace",
+        es: "Sugerencia: foto tuya jugando o con tu consola o PC",
+        en: "Suggestion: photo of you playing, with your console or PC",
       },
-      caption: { es: "Espacio de trabajo", en: "Workspace" },
+      caption: { es: "Videojuegos", en: "Video games" },
       width: 1200,
       height: 900,
       isPlaceholder: true,
@@ -1113,10 +1083,10 @@ export const portfolio: PortfolioData = {
     {
       src: "/images/about/about-02.jpg",
       alt: {
-        es: "Sugerencia: diagramas de arquitectura en papel",
-        en: "Suggestion: architecture diagrams on paper",
+        es: "Sugerencia: foto con tu equipo de trabajo",
+        en: "Suggestion: photo with your team",
       },
-      caption: { es: "Diagramas de arquitectura", en: "Architecture diagrams" },
+      caption: { es: "Trabajo en equipo", en: "Teamwork" },
       width: 1200,
       height: 900,
       isPlaceholder: true,
@@ -1124,10 +1094,10 @@ export const portfolio: PortfolioData = {
     {
       src: "/images/about/about-03.jpg",
       alt: {
-        es: "Sugerencia: sesión de desarrollo Android",
-        en: "Suggestion: Android development session",
+        es: "Sugerencia: foto de un viaje",
+        en: "Suggestion: photo from a trip",
       },
-      caption: { es: "Desarrollo Android", en: "Android development" },
+      caption: { es: "Viajes", en: "Travel" },
       width: 1200,
       height: 900,
       isPlaceholder: true,
