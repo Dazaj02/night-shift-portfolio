@@ -83,7 +83,7 @@ export const portfolio: PortfolioData = {
       },
       width: 800,
       height: 1000,
-      isPlaceholder: false,
+      isPlaceholder: true,
     },
     stats: [
       {
