@@ -16,7 +16,7 @@ export type SectionId =
   | "proyectos"
   | "testimonios"
   | "experiencia"
-  | "aprendiendo"
+  | "tecnologias"
   | "contacto";
 
 /**
@@ -40,13 +40,18 @@ export interface Stat {
   label: Localized;
 }
 
-export interface LearningItem {
+export interface TechItem {
   id: string;
-  title: Localized;
-  detail: Localized;
-  /** 0–100, progreso aproximado mostrado como barra segmentada. */
-  progress: number;
-  isPlaceholder: boolean;
+  name: string;
+  /** Otros nombres con los que aparece en `Project.tech` (para calcular dónde se usó). */
+  aliases?: string[];
+  desc: Localized;
+}
+
+export interface TechGroup {
+  id: string;
+  label: Localized;
+  items: TechItem[];
 }
 
 export interface NavItem {
@@ -182,7 +187,7 @@ export interface PortfolioData {
   projects: Project[];
   testimonials: Testimonial[];
   experience: ExperienceItem[];
-  learning: LearningItem[];
+  stack: TechGroup[];
   /** Galería de Sobre mí (espacio de trabajo, intereses), 3 fotos. */
   gallery: ImageAsset[];
   socials: SocialLink[];
@@ -248,7 +253,7 @@ export interface UIStrings {
   placeholderNote: string;
   testimonials: { title: string; intro: string };
   toolbox: { title: string; intro: string };
-  learning: { title: string; intro: string; progress: string };
+  stack: { title: string; intro: string; usedIn: string; noProject: string };
   gallery: {
     dialogLabel: string;
     close: string;

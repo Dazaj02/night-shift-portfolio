@@ -79,10 +79,11 @@ export const ui: Record<Locale, UIStrings> = {
       title: "Arsenal",
       intro: "Herramientas y tecnologías con las que construyo.",
     },
-    learning: {
-      title: "Aprendiendo ahora",
-      intro: "Temas en los que estoy avanzando. El porcentaje es aproximado.",
-      progress: "Progreso",
+    stack: {
+      title: "Tecnologías",
+      intro: "Todo lo que he usado en mis proyectos, en una sola tabla. Pasa el cursor (o toca) una casilla para ver qué es y dónde la apliqué.",
+      usedIn: "Usado en",
+      noProject: "Cursos y práctica",
     },
     gallery: {
       dialogLabel: "Visor de capturas",
@@ -211,10 +212,11 @@ export const ui: Record<Locale, UIStrings> = {
       title: "Loadout",
       intro: "Tools and technologies I build with.",
     },
-    learning: {
-      title: "Learning now",
-      intro: "Topics I am working on. Percentages are approximate.",
-      progress: "Progress",
+    stack: {
+      title: "Technologies",
+      intro: "Everything I have used across my projects, in one table. Hover (or tap) a cell to see what it is and where I applied it.",
+      usedIn: "Used in",
+      noProject: "Courses and practice",
     },
     gallery: {
       dialogLabel: "Screenshot viewer",

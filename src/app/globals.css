@@ -675,19 +675,57 @@ html[data-motion="off"] .marquee-group[aria-hidden="true"] {
   display: none;
 }
 
-/* Aprendiendo: barra segmentada */
-.seg {
-  background: var(--color-line);
+/* Tecnologías: tabla de casillas + panel con glitch */
+.tech-cell {
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--color-line);
+  background: transparent;
+  color: var(--color-ink-dim);
+  cursor: default;
+  transition: color 120ms linear, border-color 120ms linear, background-color 120ms linear;
 }
-.seg[data-on="true"] {
-  background: var(--color-accent);
+.tech-cell:hover,
+.tech-cell[data-active] {
+  position: relative;
+  z-index: 1;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
 }
-.seg-bar.is-armed .seg[data-on="true"] {
-  background: var(--color-line);
+.tech-name {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.15;
 }
-.seg-bar.is-armed.is-loaded .seg[data-on="true"] {
-  background: var(--color-accent);
-  transition: background-color 90ms linear calc(var(--i) * 80ms);
+.tech-tip {
+  position: fixed;
+  z-index: 60;
+  width: min(18rem, calc(100vw - 1rem));
+  padding: 0.875rem 1rem 1rem;
+  background: var(--color-panel);
+  pointer-events: none;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.45);
+}
+html:not([data-motion="off"]) .tech-tip {
+  animation: ctx-glitch-in 280ms steps(1, end) 1;
+}
+html:not([data-motion="off"]) .tech-cell[data-active] .tech-name {
+  animation: tech-name-glitch 300ms steps(1, end) 1;
+}
+@keyframes tech-name-glitch {
+  0% { transform: translateX(calc(-3px * var(--amp))); text-shadow: calc(2px * var(--amp)) 0 rgb(0 240 255 / 0.8), calc(-2px * var(--amp)) 0 rgb(255 51 85 / 0.8); }
+  25% { transform: translateX(calc(3px * var(--amp))); text-shadow: calc(-2px * var(--amp)) 0 rgb(0 240 255 / 0.8), calc(2px * var(--amp)) 0 rgb(255 51 85 / 0.8); }
+  50% { transform: translateX(calc(-1px * var(--amp))); text-shadow: calc(1px * var(--amp)) 0 rgb(0 240 255 / 0.8), calc(-1px * var(--amp)) 0 rgb(255 51 85 / 0.8); }
+  75%, 100% { transform: none; text-shadow: none; }
 }
 
 /* Visor de capturas */

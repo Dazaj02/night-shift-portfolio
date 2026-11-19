@@ -31,10 +31,10 @@ src/
     icon.svg       favicon
   components/
     layout/        SiteHeader, SiteFooter, SkipLink, LanguageSwitch, CurrentYear
-    sections/      Hero, Arsenal, About, Projects, Testimonials, Experience, Learning, Contact
+    sections/      Hero, Arsenal, About, Projects, Testimonials, Experience, TechStack, Contact
     ui/            Section, GlitchHeading, HeroTitle, GlitchImage, CutButton, Icon, TitleMenu,
                    BootScreen, MotionToggle, ThemeToggle, Reveal, ProjectMedia (visor),
-                   ExperienceTabs, LearningBar, ProjectLinks, PlaceholderBadge, SectionLink
+                   ExperienceTabs, ProjectLinks, PlaceholderBadge, SectionLink
     contact/       ContactForm
   data/            portfolio.ts (contenido) y ui.ts (microcopy)
   lib/             i18n.ts, sections.ts, nav.ts, motion.ts, theme.ts, useScramble.ts
