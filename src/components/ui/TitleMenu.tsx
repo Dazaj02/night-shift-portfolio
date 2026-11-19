@@ -40,7 +40,10 @@ export function TitleMenu({
   ariaLabel: string;
   items: TitleMenuItem[];
 }) {
-  const [active, setActive] = useState(0);
+  // `active`: ítem iluminado (solo bajo el cursor o con el foco de teclado; null = reposo).
+  // `cursor`: ítem que recibe el Tab / las flechas (tabindex itinerante).
+  const [active, setActive] = useState<number | null>(null);
+  const [cursor, setCursor] = useState(0);
   const refs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   // "Presiona Enter" desde la pantalla de título lleva el foco al menú.
@@ -51,16 +54,16 @@ export function TitleMenu({
       if (el && el !== document.body) return;
       if (window.scrollY > window.innerHeight * 0.6) return;
       e.preventDefault();
-      refs.current[active]?.focus();
+      refs.current[cursor]?.focus();
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [active]);
+  }, [cursor]);
 
   function focusItem(i: number) {
     const n = items.length;
     const next = (i + n) % n;
-    setActive(next);
+    setCursor(next);
     refs.current[next]?.focus();
   }
 
@@ -68,11 +71,11 @@ export function TitleMenu({
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        focusItem(active + 1);
+        focusItem(cursor + 1);
         break;
       case "ArrowUp":
         e.preventDefault();
-        focusItem(active - 1);
+        focusItem(cursor - 1);
         break;
       case "Home":
         e.preventDefault();
@@ -102,10 +105,18 @@ export function TitleMenu({
               ref: (el: HTMLAnchorElement | null) => {
                 refs.current[i] = el;
               },
-              tabIndex: isActive ? 0 : -1,
+              tabIndex: i === cursor ? 0 : -1,
               "data-active": isActive,
-              onFocus: () => setActive(i),
+              onFocus: (e: React.FocusEvent<HTMLAnchorElement>) => {
+                setCursor(i);
+                // Un clic también da foco, pero solo el foco de teclado mantiene el ítem encendido.
+                if (e.currentTarget.matches(":focus-visible")) setActive(i);
+              },
+              onBlur: () => setActive((cur) => (cur === i ? null : cur)),
               onMouseEnter: () => setActive(i),
+              onMouseLeave: (e: React.MouseEvent<HTMLAnchorElement>) => {
+                if (!e.currentTarget.matches(":focus-visible")) setActive((cur) => (cur === i ? null : cur));
+              },
               className: itemClass,
             };
             const inner = (
@@ -143,7 +154,7 @@ export function TitleMenu({
         aria-live="polite"
         className="mt-4 min-h-[3rem] max-w-[52ch] text-[0.9375rem] leading-snug text-ink-dim"
       >
-        {items[active]?.hint}
+        {active !== null ? items[active]?.hint : null}
       </p>
     </div>
   );
