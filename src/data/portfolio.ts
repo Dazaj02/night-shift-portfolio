@@ -1113,7 +1113,7 @@ export const portfolio: PortfolioData = {
       kind: "linkedin",
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/david-alejandro-aza-jojoa-449044408",
-      display: "linkedin.com/in/david-alejandro-aza-jojoa-449044408",
+      display: "David Aza",
       isPlaceholder: false,
     },
     {
