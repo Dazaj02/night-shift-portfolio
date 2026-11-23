@@ -73,7 +73,7 @@ export const portfolio: PortfolioData = {
     },
     email: "david.aza.dev@gmail.com",
     cvHref: "/cv/david-aza-cv.pdf",
-    siteUrl: "https://david-aza-portfolio.vercel.app",
+    siteUrl: "https://night-shift-portfolio.vercel.app",
     photo: {
       src: "/images/profile.jpg",
       alt: {
@@ -824,11 +824,11 @@ export const portfolio: PortfolioData = {
       },
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
       year: "2026",
-      status: { es: "En construcción", en: "In progress" },
+      status: { es: "Publicado", en: "Live" },
       links: [
-        { kind: "github", href: null, status: "soon" },
-        { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "soon" },
+        { kind: "github", href: null, status: "private" },
+        { kind: "vercel", href: "https://night-shift-portfolio.vercel.app", status: "available" },
+        { kind: "demo", href: "https://night-shift-portfolio.vercel.app", status: "available" },
       ],
       platform: { es: "Web", en: "Web" },
       featured: false,
