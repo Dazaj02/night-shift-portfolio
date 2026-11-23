@@ -13,4 +13,4 @@ export function openGate() {
  * instante antes de que aparezca. No se muestra con el movimiento en pausa ni al cambiar de
  * idioma. Con `?intro` en la URL se fuerza (útil para volver a verla).
  */
-export const GATE_INIT_SCRIPT = `(function(){try{var d=document.documentElement;if(d.getAttribute("data-motion")==="off"||d.hasAttribute("data-nav"))return;if(/[?&]intro(=|&|$)/.test(location.search)||!sessionStorage.getItem("${GATE_KEY}"))d.setAttribute("data-gate","1")}catch(e){}})()`;
+export const GATE_INIT_SCRIPT = `(function(){try{var d=document.documentElement;if(d.getAttribute("data-motion")==="off"||d.hasAttribute("data-nav"))return;d.setAttribute("data-gate","1")}catch(e){}})()`;

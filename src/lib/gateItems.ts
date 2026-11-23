@@ -19,7 +19,7 @@ export function gateItems(lang: Locale): GateItem[] {
     "sobre-mi": es ? "Ingeniería de Software" : "Software Engineering",
     proyectos: es ? `${portfolio.projects.length} proyectos` : `${portfolio.projects.length} projects`,
     testimonios: es ? `${portfolio.testimonials.length} voces` : `${portfolio.testimonials.length} voices`,
-    experiencia: es ? `${portfolio.experience.length} registros` : `${portfolio.experience.length} records`,
+    experiencia: es ? "5.º semestre" : "5th semester",
     tecnologias: es ? `${techCount} tecnologías` : `${techCount} technologies`,
     contacto: es ? "GitHub · LinkedIn · correo" : "GitHub · LinkedIn · email",
   };

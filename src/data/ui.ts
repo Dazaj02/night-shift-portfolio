@@ -113,8 +113,8 @@ export const ui: Record<Locale, UIStrings> = {
       label: "Tema de color",
     },
     experience: {
-      title: "Experiencia",
-      intro: "Trayectoria laboral y académica.",
+      title: "Formación",
+      intro: "Mi formación académica.",
       work: "Laboral",
       education: "Académica",
     },
@@ -255,8 +255,8 @@ export const ui: Record<Locale, UIStrings> = {
       label: "Color theme",
     },
     experience: {
-      title: "Experience",
-      intro: "Work and academic background.",
+      title: "Education",
+      intro: "My academic background.",
       work: "Work",
       education: "Academic",
     },

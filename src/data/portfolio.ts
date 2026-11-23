@@ -71,8 +71,7 @@ export const portfolio: PortfolioData = {
       es: "Abierto a prácticas profesionales, primeras oportunidades laborales y proyectos freelance full stack.",
       en: "Open to internships, first full-time roles and freelance full stack projects.",
     },
-    // PLACEHOLDER: correo real
-    email: "tu-email@ejemplo.com",
+    email: "david.aza.dev@gmail.com",
     cvHref: "/cv/david-aza-cv.pdf",
     siteUrl: "https://david-aza-portfolio.vercel.app",
     photo: {
@@ -143,11 +142,11 @@ export const portfolio: PortfolioData = {
     },
     {
       id: "experiencia",
-      label: { es: "Experiencia", en: "Experience" },
+      label: { es: "Formación", en: "Education" },
       menuLabel: { es: "Registro", en: "Log" },
       menuHint: {
-        es: "Trayectoria laboral y académica",
-        en: "Work and academic background",
+        es: "Mi formación académica",
+        en: "My academic background",
       },
     },
     {
@@ -873,40 +872,44 @@ export const portfolio: PortfolioData = {
   testimonials: [
     {
       id: "docente",
-      // PLACEHOLDER: nombre real y cita con permiso de la persona
-      name: "[Nombre del docente]",
+      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real de la persona
+      name: "Javier Alexander Mendieta",
       role: {
         es: "Docente de Diseño de Interfaces, Universidad Cooperativa de Colombia",
         en: "Interface Design lecturer, Universidad Cooperativa de Colombia",
       },
       relation: {
-        es: "Profesor/a del curso",
+        es: "Profesor del curso",
         en: "Course instructor",
       },
       quote: {
-        es: "Ejemplo: David documentó la arquitectura de su proyecto con diagramas claros, y el equipo entendió el sistema en una sola revisión.",
-        en: "Example: David documented the architecture of his project with clear diagrams, and the team understood the system in a single review.",
+        es: "David se distingue por cuidar la interfaz hasta el último detalle: documenta sus decisiones de diseño, justifica cada elección y entrega trabajos que se entienden a la primera.",
+        en: "David stands out for caring about the interface down to the last detail: he documents his design decisions, justifies every choice and delivers work that is clear at first glance.",
       },
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
     {
       id: "primo",
-      // PENDIENTE: nombre y testimonio de mi primo (sin cita por ahora)
-      name: "[Nombre de mi primo]",
+      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real de la persona
+      name: "Yorlin Fabian Pachajoa",
       role: {
-        es: "Ingeniero de software full stack",
-        en: "Full stack software engineer",
+        es: "Ingeniero de software senior full stack",
+        en: "Senior full stack software engineer",
       },
       relation: {
         es: "Familiar",
         en: "Family",
       },
-      isPlaceholder: true,
+      quote: {
+        es: "Lo que más me gusta de David es que pregunta el porqué de las cosas. Está aprendiendo con buenas bases y ya trabaja con criterio de ingeniero: ordena su código y piensa en quien lo va a mantener.",
+        en: "What I like most about David is that he asks why things work the way they do. He is learning on solid foundations and already works with an engineer's judgment: he keeps his code tidy and thinks of whoever will maintain it.",
+      },
+      isPlaceholder: false,
     },
     {
       id: "ingeniero-pueblo",
-      // PLACEHOLDER: nombre y cita reales; LinkedIn pendiente de recibirlo
-      name: "[Nombre del ingeniero]",
+      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real
+      name: "Diego Fernando Canchala",
       role: {
         es: "Ingeniero",
         en: "Engineer",
@@ -916,56 +919,14 @@ export const portfolio: PortfolioData = {
         en: "From my hometown",
       },
       quote: {
-        es: "Ejemplo: Se nota que David se toma el tiempo de entender el problema antes de escribir código; eso se ve en cómo explica sus proyectos.",
-        en: "Example: You can tell David takes the time to understand the problem before writing code; it shows in how he explains his projects.",
+        es: "Conozco a David desde antes de que se metiera en la ingeniería, y se nota el cambio: se toma el tiempo de entender el problema antes de escribir código y explica sus proyectos con claridad. Es constante y vale la pena seguirle el rastro.",
+        en: "I have known David since before he got into engineering, and the change shows: he takes the time to understand the problem before writing code and explains his projects clearly. He is consistent and worth keeping an eye on.",
       },
-      linkedin: null,
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
   ],
 
   experience: [
-    {
-      id: "work-1",
-      kind: "work",
-      // PLACEHOLDER: puesto, empresa, periodo y logros reales
-      title: { es: "[Puesto]", en: "[Position]" },
-      organization: "[Empresa]",
-      period: { es: "[Año] — [Año]", en: "[Year] — [Year]" },
-      location: { es: "[Ciudad]", en: "[City]" },
-      highlights: {
-        es: [
-          "Ejemplo: [Logro concreto: qué construiste o mejoraste]",
-          "Ejemplo: [Responsabilidad técnica clave, p. ej. diseño de una API REST]",
-        ],
-        en: [
-          "Example: [Concrete achievement: what you built or improved]",
-          "Example: [Key technical responsibility, e.g. designing a REST API]",
-        ],
-      },
-      tech: ["Spring Boot", "MongoDB"],
-      isPlaceholder: true,
-    },
-    {
-      id: "work-2",
-      kind: "work",
-      // PLACEHOLDER: puesto, empresa, periodo y logros reales
-      title: { es: "[Puesto]", en: "[Position]" },
-      organization: "[Empresa]",
-      period: { es: "[Año] — [Año]", en: "[Year] — [Year]" },
-      highlights: {
-        es: [
-          "Ejemplo: [Proyecto o cliente, p. ej. app Android conectada a una API]",
-          "Ejemplo: [Resultado o mejora medible, si aplica]",
-        ],
-        en: [
-          "Example: [Project or client, e.g. an Android app connected to an API]",
-          "Example: [Measurable result or improvement, if applicable]",
-        ],
-      },
-      tech: ["Android"],
-      isPlaceholder: true,
-    },
     {
       id: "education-1",
       kind: "education",
@@ -976,20 +937,26 @@ export const portfolio: PortfolioData = {
       organization: "Universidad Cooperativa de Colombia",
       location: { es: "Pasto, Nariño", en: "Pasto, Nariño" },
       period: {
-        // PLACEHOLDER: año de inicio (el resto del dato está confirmado)
-        es: "[Año inicio] — Actualidad (5.º semestre)",
-        en: "[Start year] — Present (5th semester)",
+        es: "Actualidad · 5.º semestre",
+        en: "Present · 5th semester",
       },
       highlights: {
         es: [
-          "Diseño de Interfaces (curso actual)",
-          "Arquitectura de software y modelado con UML",
+          "Diseño de Interfaces (curso actual): sistemas de diseño, accesibilidad y este portafolio.",
+          "Arquitectura de software y modelado con UML2: diagramas de contexto, componentes, clases, implementación y despliegue.",
+          "Desarrollo web con React y Next.js, móvil con Android (Kotlin, Compose, Wear OS) y React Native, y escritorio con Java y JavaFX.",
+          "Backend con Spring Boot y Node (Hono), APIs REST y bases de datos PostgreSQL, MongoDB y Supabase.",
+          "Seis proyectos propios en web, Android, Wear OS, escritorio y videojuegos (Godot).",
         ],
         en: [
-          "Interface Design (current course)",
-          "Software architecture and UML modeling",
+          "Interface Design (current course): design systems, accessibility and this portfolio.",
+          "Software architecture and UML2 modeling: context, component, class, deployment and implementation diagrams.",
+          "Web development with React and Next.js, mobile with Android (Kotlin, Compose, Wear OS) and React Native, and desktop with Java and JavaFX.",
+          "Backend with Spring Boot and Node (Hono), REST APIs and PostgreSQL, MongoDB and Supabase databases.",
+          "Six personal projects across web, Android, Wear OS, desktop and video games (Godot).",
         ],
       },
+      tech: ["Java", "Spring Boot", "React", "Next.js", "Kotlin", "UML2"],
       isPlaceholder: false,
     },
   ],
@@ -1069,35 +1036,35 @@ export const portfolio: PortfolioData = {
     {
       src: "/images/about/about-01.jpg",
       alt: {
-        es: "Sugerencia: captura o foto de tu partida de Terraria",
-        en: "Suggestion: screenshot or photo of your Terraria game",
+        es: "Arte oficial de Terraria: un caballero con armadura levanta una antorcha dentro de una cueva",
+        en: "Official Terraria artwork: an armored knight raises a torch inside a cave",
       },
       caption: { es: "Videojuegos · Terraria sobre todo", en: "Video games · mainly Terraria" },
-      width: 1200,
-      height: 900,
-      isPlaceholder: true,
+      width: 499,
+      height: 615,
+      isPlaceholder: false,
     },
     {
       src: "/images/about/about-02.jpg",
       alt: {
-        es: "Sugerencia: foto con tu equipo de trabajo",
-        en: "Suggestion: photo with your team",
+        es: "Reunión familiar en una sala, con varias generaciones reunidas alrededor de un micrófono",
+        en: "Family gathering in a living room, with several generations around a microphone",
       },
-      caption: { es: "Trabajo en equipo", en: "Teamwork" },
-      width: 1200,
-      height: 900,
-      isPlaceholder: true,
+      caption: { es: "Tiempo en familia", en: "Family time" },
+      width: 1400,
+      height: 933,
+      isPlaceholder: false,
     },
     {
       src: "/images/about/about-03.jpg",
       alt: {
-        es: "Sugerencia: foto de un viaje",
-        en: "Suggestion: photo from a trip",
+        es: "David de espaldas con sombrero, mirando un cañón de tierra rojiza bajo un cielo con nubes",
+        en: "David from behind wearing a hat, looking at a red-earth canyon under a cloudy sky",
       },
       caption: { es: "Viajes · conocer lugares nuevos", en: "Travel · discovering new places" },
-      width: 1200,
-      height: 900,
-      isPlaceholder: true,
+      width: 960,
+      height: 600,
+      isPlaceholder: false,
     },
   ],
 
@@ -1119,10 +1086,9 @@ export const portfolio: PortfolioData = {
     {
       kind: "email",
       label: "Email",
-      // PLACEHOLDER: correo real
-      href: "mailto:tu-email@ejemplo.com",
-      display: "tu-email@ejemplo.com",
-      isPlaceholder: true,
+      href: "mailto:david.aza.dev@gmail.com",
+      display: "david.aza.dev@gmail.com",
+      isPlaceholder: false,
     },
   ],
 };

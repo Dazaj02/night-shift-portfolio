@@ -1,11 +1,10 @@
-import type { ExperienceItem, ExperienceKind, Locale } from "@/types/portfolio";
+import type { ExperienceItem, Locale } from "@/types/portfolio";
 import { portfolio } from "@/data/portfolio";
 import { getUI, t } from "@/lib/i18n";
 import { sectionPosition } from "@/lib/nav";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PlaceholderBadge } from "@/components/ui/PlaceholderBadge";
-import { ExperienceTabs } from "@/components/ui/ExperienceTabs";
 
 function Item({ item, lang, badge, index }: { item: ExperienceItem; lang: Locale; badge: string; index: number }) {
   const location = item.location ? t(item.location, lang) : null;
@@ -43,35 +42,14 @@ export function Experience({ lang }: { lang: Locale }) {
   const ui = getUI(lang);
   const { index, total } = sectionPosition("experiencia");
 
-  const labels: Record<ExperienceKind, string> = {
-    work: ui.experience.work,
-    education: ui.experience.education,
-  };
-  const kinds: ExperienceKind[] = ["work", "education"];
-  const workIsSample = portfolio.experience
-    .filter((e) => e.kind === "work")
-    .every((e) => e.isPlaceholder);
-  // La pestaña con datos reales abre primero.
-  const ordered = workIsSample ? [...kinds].reverse() : kinds;
-
-  const tabs = ordered.map((kind) => ({
-    id: kind,
-    label: labels[kind],
-    panel: (
-      <ol aria-label={labels[kind]} className="max-w-3xl border-l border-line">
-        {portfolio.experience
-          .filter((e) => e.kind === kind)
-          .map((item, n) => (
-            <Item key={item.id} item={item} lang={lang} badge={ui.placeholderBadge} index={n} />
-          ))}
-      </ol>
-    ),
-  }));
-
   return (
     <Section id="experiencia" title={ui.experience.title} index={index} total={total} lang={lang} sectionLabel={ui.sectionIndex}>
       <p className="measure -mt-4 mb-10 text-lg text-ink-dim">{ui.experience.intro}</p>
-      <ExperienceTabs tabs={tabs} label={ui.experience.title} />
+      <ol aria-label={ui.experience.title} className="max-w-3xl border-l border-line">
+        {portfolio.experience.map((item, n) => (
+          <Item key={item.id} item={item} lang={lang} badge={ui.placeholderBadge} index={n} />
+        ))}
+      </ol>
     </Section>
   );
 }
