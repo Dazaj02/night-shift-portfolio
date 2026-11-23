@@ -257,6 +257,19 @@ export interface UIStrings {
     counter: string;
   };
   photoPlaceholder: string;
+  gate: {
+    label: string;
+    title: string;
+    session: string;
+    greeting: string;
+    selected: string;
+    accessing: string;
+    access: string;
+    hint: string;
+    skip: string;
+    sections: string;
+    section: string;
+  };
   motion: { pause: string; play: string; label: string };
   theme: { toLight: string; toDark: string; label: string };
   experience: { title: string; intro: string; work: string; education: string };

@@ -5,22 +5,17 @@ import { sectionPosition } from "@/lib/nav";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PlaceholderBadge } from "@/components/ui/PlaceholderBadge";
-import { Icon } from "@/components/ui/Icon";
 
 function Caption({
   item,
   channel,
   lang,
   badge,
-  linkedinSoon,
-  external,
 }: {
   item: Testimonial;
   channel: string;
   lang: Locale;
   badge: string;
-  linkedinSoon: string;
-  external: string;
 }) {
   return (
     <figcaption className="mt-5 flex flex-wrap items-start gap-x-4 gap-y-2">
@@ -33,23 +28,6 @@ function Caption({
           {t(item.role, lang)} · {t(item.relation, lang)}
         </p>
         {item.context && <p className="text-sm text-ink-dim">{t(item.context, lang)}</p>}
-        {item.linkedin ? (
-          <a
-            href={item.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1 inline-flex min-h-11 items-center gap-2 text-sm text-ink underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-          >
-            <Icon name="linkedin" size={16} />
-            LinkedIn
-            <span className="sr-only"> {external}</span>
-          </a>
-        ) : item.linkedin === null ? (
-          <p className="mt-1 inline-flex items-center gap-2 text-sm text-ink-faint">
-            <Icon name="linkedin" size={16} />
-            LinkedIn · {linkedinSoon}
-          </p>
-        ) : null}
       </div>
       {item.isPlaceholder && <PlaceholderBadge label={badge} />}
     </figcaption>
@@ -70,10 +48,12 @@ export function Testimonials({ lang }: { lang: Locale }) {
     <Section id="testimonios" title={ui.testimonials.title} index={index} total={total} lang={lang} sectionLabel={ui.sectionIndex}>
       <div className="-mt-4 mb-12 max-w-[68ch] space-y-3">
         <p className="text-lg text-ink-dim">{ui.testimonials.intro}</p>
-        <p className="flex flex-wrap items-center gap-3 text-[0.9375rem] text-ink-dim">
-          <PlaceholderBadge label={ui.placeholderBadge} />
-          <span>{ui.placeholderNote}</span>
-        </p>
+        {portfolio.testimonials.some((x) => x.isPlaceholder) && (
+          <p className="flex flex-wrap items-center gap-3 text-[0.9375rem] text-ink-dim">
+            <PlaceholderBadge label={ui.placeholderBadge} />
+            <span>{ui.placeholderNote}</span>
+          </p>
+        )}
       </div>
 
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -83,7 +63,7 @@ export function Testimonials({ lang }: { lang: Locale }) {
             <blockquote className="glitch-hover-target mt-6 text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-snug text-ink">
               <Quote item={featured} lang={lang} empty={ui.testimonials.empty} />
             </blockquote>
-            <Caption item={featured} channel={channelOf(1)} lang={lang} badge={ui.placeholderBadge} linkedinSoon={ui.comingSoon} external={ui.externalLink} />
+            <Caption item={featured} channel={channelOf(1)} lang={lang} badge={ui.placeholderBadge} />
           </Reveal>
         )}
 
@@ -93,7 +73,7 @@ export function Testimonials({ lang }: { lang: Locale }) {
               <blockquote className="glitch-hover-target text-lg leading-relaxed text-ink">
                 <Quote item={item} lang={lang} empty={ui.testimonials.empty} />
               </blockquote>
-              <Caption item={item} channel={channelOf(i + 2)} lang={lang} badge={ui.placeholderBadge} linkedinSoon={ui.comingSoon} external={ui.externalLink} />
+              <Caption item={item} channel={channelOf(i + 2)} lang={lang} badge={ui.placeholderBadge} />
             </Reveal>
           ))}
         </div>

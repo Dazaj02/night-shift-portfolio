@@ -14,8 +14,10 @@ import { SkipLink } from "@/components/layout/SkipLink";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { DocState } from "@/components/layout/DocState";
-import { BootScreen } from "@/components/ui/BootScreen";
+import { EntryGate } from "@/components/ui/EntryGate";
 import { MOTION_INIT_SCRIPT } from "@/lib/motion";
+import { GATE_INIT_SCRIPT } from "@/lib/gate";
+import { gateItems } from "@/lib/gateItems";
 import "../globals.css";
 
 const chakra = Chakra_Petch({
@@ -43,8 +45,8 @@ export function generateStaticParams() {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F2EFE6" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0A0C" },
+    { media: "(prefers-color-scheme: light)", color: "#e4f1f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#04090d" },
   ],
 };
 
@@ -94,6 +96,10 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: MOTION_INIT_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: GATE_INIT_SCRIPT }} />
+        <noscript>
+          <style>{".gate{display:none!important}html[data-gate] body>*{visibility:visible!important}html[data-gate] body{overflow:auto!important}"}</style>
+        </noscript>
       </head>
       <body>
         <DocState />
@@ -109,7 +115,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           motion={ui.motion}
           theme={ui.theme}
         />
-        <BootScreen />
+        <EntryGate labels={ui.gate} items={gateItems(lang)} />
         {children}
         <SiteFooter lang={lang} />
       </body>
