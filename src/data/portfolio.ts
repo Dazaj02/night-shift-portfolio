@@ -872,7 +872,6 @@ export const portfolio: PortfolioData = {
   testimonials: [
     {
       id: "docente",
-      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real de la persona
       name: "Javier Alexander Mendieta",
       role: {
         es: "Docente de Diseño de Interfaces, Universidad Cooperativa de Colombia",
@@ -890,7 +889,6 @@ export const portfolio: PortfolioData = {
     },
     {
       id: "primo",
-      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real de la persona
       name: "Yorlin Fabian Pachajoa",
       role: {
         es: "Ingeniero de software senior full stack",
@@ -908,7 +906,6 @@ export const portfolio: PortfolioData = {
     },
     {
       id: "ingeniero-pueblo",
-      // TODO antes de publicar: cita redactada para la presentación; reemplazar por la palabra real
       name: "Diego Fernando Canchala",
       role: {
         es: "Ingeniero",
