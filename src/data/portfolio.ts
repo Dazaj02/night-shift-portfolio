@@ -236,7 +236,6 @@ export const portfolio: PortfolioData = {
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/front-mobile", status: "available" },
         { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "soon" },
       ],
       platform: { es: "Android + API", en: "Android + API" },
       featured: true,
@@ -347,7 +346,6 @@ export const portfolio: PortfolioData = {
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/Text-Refinery", status: "available" },
         { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "soon" },
       ],
       platform: { es: "Escritorio · Windows, macOS, Linux", en: "Desktop · Windows, macOS, Linux" },
       featured: true,
@@ -458,7 +456,6 @@ export const portfolio: PortfolioData = {
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/statussync-wear", status: "available" },
         { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "soon" },
       ],
       platform: { es: "Wear OS + API", en: "Wear OS + API" },
       featured: true,
@@ -617,7 +614,6 @@ export const portfolio: PortfolioData = {
       links: [
         { kind: "github", href: null, status: "private" },
         { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "private" },
       ],
       platform: { es: "PC (Windows)", en: "PC (Windows)" },
       team: { es: "Equipo de 3", en: "Team of 3" },
@@ -733,7 +729,6 @@ export const portfolio: PortfolioData = {
           status: "available",
         },
         { kind: "vercel", href: null, status: "soon" },
-        { kind: "demo", href: null, status: "soon" },
       ],
       platform: { es: "Web", en: "Web" },
       team: { es: "Equipo de 3", en: "Team of 3" },
@@ -828,7 +823,6 @@ export const portfolio: PortfolioData = {
       links: [
         { kind: "github", href: null, status: "private" },
         { kind: "vercel", href: "https://night-shift-portfolio.vercel.app", status: "available" },
-        { kind: "demo", href: "https://night-shift-portfolio.vercel.app", status: "available" },
       ],
       platform: { es: "Web", en: "Web" },
       featured: false,

@@ -5,7 +5,6 @@ import { Icon, type IconName } from "./Icon";
 const kindIcon: Record<ProjectLink["kind"], IconName> = {
   github: "github",
   vercel: "globe",
-  demo: "play",
 };
 
 export function ProjectLinks({

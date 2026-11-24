@@ -59,7 +59,6 @@ export const ui: Record<Locale, UIStrings> = {
       links: {
         github: "GitHub",
         vercel: "Vercel",
-        demo: "Demo",
       },
       linkStatus: {
         soon: "Próximamente",
@@ -201,7 +200,6 @@ export const ui: Record<Locale, UIStrings> = {
       links: {
         github: "GitHub",
         vercel: "Vercel",
-        demo: "Demo",
       },
       linkStatus: {
         soon: "Coming soon",

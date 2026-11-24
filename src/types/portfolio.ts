@@ -65,7 +65,7 @@ export interface NavItem {
 }
 
 export type LinkStatus = "available" | "soon" | "private";
-export type ProjectLinkKind = "github" | "vercel" | "demo";
+export type ProjectLinkKind = "github" | "vercel";
 
 export interface ProjectLink {
   kind: ProjectLinkKind;
@@ -99,7 +99,7 @@ export interface Project {
   year: string;
   /** Estado de la "misión", p. ej. "En desarrollo" / "Completado". */
   status: Localized;
-  links: [ProjectLink, ProjectLink, ProjectLink];
+  links: [ProjectLink, ProjectLink];
   /** Plataforma, p. ej. "Web", "Android + API". */
   platform: Localized;
   /** Equipo, p. ej. "Equipo de 3"; omitir si es individual. */
