@@ -235,7 +235,6 @@ export const portfolio: PortfolioData = {
       status: { es: "En desarrollo", en: "In development" },
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/front-mobile", status: "available" },
-        { kind: "vercel", href: null, status: "soon" },
       ],
       platform: { es: "Android + API", en: "Android + API" },
       featured: true,
@@ -345,7 +344,6 @@ export const portfolio: PortfolioData = {
       status: { es: "Versión 1.0.3", en: "Version 1.0.3" },
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/Text-Refinery", status: "available" },
-        { kind: "vercel", href: null, status: "soon" },
       ],
       platform: { es: "Escritorio · Windows, macOS, Linux", en: "Desktop · Windows, macOS, Linux" },
       featured: true,
@@ -455,7 +453,6 @@ export const portfolio: PortfolioData = {
       status: { es: "En desarrollo", en: "In development" },
       links: [
         { kind: "github", href: "https://github.com/Dazaj02/statussync-wear", status: "available" },
-        { kind: "vercel", href: null, status: "soon" },
       ],
       platform: { es: "Wear OS + API", en: "Wear OS + API" },
       featured: true,

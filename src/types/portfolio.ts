@@ -99,7 +99,7 @@ export interface Project {
   year: string;
   /** Estado de la "misión", p. ej. "En desarrollo" / "Completado". */
   status: Localized;
-  links: [ProjectLink, ProjectLink];
+  links: ProjectLink[];
   /** Plataforma, p. ej. "Web", "Android + API". */
   platform: Localized;
   /** Equipo, p. ej. "Equipo de 3"; omitir si es individual. */
